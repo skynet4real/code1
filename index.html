@@ -161,15 +161,15 @@ const touchState={left:false,right:false,jump:false,pickup:false};
 window.addEventListener('keydown',e=>{keys[e.code]=true;
   if(e.code==='Enter'||e.code==='Space'){
     if(gameState==='title')startGame();
-    else if(gameState==='gameOver'&&gameOverFactTimer<=0){score=0;lives=3;currentLevel=0;loadLevel(0);gameState='playing';}
-    else if(gameState==='win'){score=0;lives=3;currentLevel=0;loadLevel(0);gameState='playing';}
+    else if(gameState==='gameOver'&&gameOverFactTimer<=0){score=0;lives=5;currentLevel=0;loadLevel(0);gameState='playing';}
+    else if(gameState==='win'){score=0;lives=5;currentLevel=0;loadLevel(0);gameState='playing';}
   }
 });
 window.addEventListener('keyup',e=>{keys[e.code]=false;});
 canvas.addEventListener('click',()=>{
   if(gameState==='title')startGame();
-  else if(gameState==='gameOver'&&gameOverFactTimer<=0){score=0;lives=3;currentLevel=0;loadLevel(0);gameState='playing';}
-  else if(gameState==='win'){score=0;lives=3;currentLevel=0;loadLevel(0);gameState='playing';}
+  else if(gameState==='gameOver'&&gameOverFactTimer<=0){score=0;lives=5;currentLevel=0;loadLevel(0);gameState='playing';}
+  else if(gameState==='win'){score=0;lives=5;currentLevel=0;loadLevel(0);gameState='playing';}
 });
 
 function isLeft(){return keys['ArrowLeft']||keys['KeyA']||touchState.left;}
@@ -960,7 +960,7 @@ function resolveCollision(entity,platforms){
 
 function startGame(){
   initAudio();document.getElementById('title-screen').style.display='none';
-  score=0;lives=3;currentLevel=0;gateMoneyParticles=[];loadLevel(0);gameState='playing';
+  score=0;lives=5;currentLevel=0;gateMoneyParticles=[];loadLevel(0);gameState='playing';
 }
 function loadLevel(index){
   currentLevel=index;level=createLevel(index);
